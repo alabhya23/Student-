@@ -1,0 +1,66 @@
+//student.java
+
+class Student{
+	private String name;    
+	private int prn;
+	private String branch;
+	private String batch;
+	private String dob;
+	private float cgpa;
+	
+	public Student(String name , int prn,String branch,String batch,String dob,float cgpa){
+		setName(name);
+		setPRN(prn);
+		setBranch(branch);
+		setBatch(batch);
+		setDOB(dob);
+		setCGPA(cgpa);
+	}
+	public String getname(){
+		return name;
+	}
+	public void setName(String name){ //set method
+		this.name = name;
+	}
+	public int getPRN(){ //get method
+		return prn;
+	}
+	public void setPRN(int prn){
+		this.prn = prn;
+	}
+	// CGPA float AND branch AND batchstring 
+	// for multiply student
+	
+	public String getBranch(){
+		return branch;
+	}
+	public void setBranch	(String branch){
+		this.branch = branch;
+	}
+	public String getBatch(){
+		return batch;
+	}
+
+    public String getDOB() {
+        return dob;
+    }
+
+    public void setDOB(String dob) {
+        this.dob = dob;
+    }
+
+	public void setBatch	(String batch){
+		this.batch = batch;
+	}
+	public float getCGPA(){
+		return cgpa;
+	}
+	public void setCGPA	(float cgpa){
+		this.cgpa = cgpa;
+	}
+		
+	public void display(){
+		System.out.println("Name: "+getname() + "| PRN: "+getPRN() + "| Branch:"+getBranch() + " | DOB: " + getDOB() + "| Batch: "+getBatch() +"| CGPA: "+getCGPA());
+	}
+}
+//switch or if else
