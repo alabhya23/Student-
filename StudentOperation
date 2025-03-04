@@ -1,0 +1,77 @@
+//StudentOperations.java //CRUD operation on Arraylist
+
+import java.util.*;
+class StudentOperations{   //update and delete as hw
+	ArrayList <Student> students;
+	
+	public StudentOperations(){
+		this.students = new ArrayList<>();
+	}
+	public void addStudent(Student student){
+		students.add(student);
+		System.out.println("Student Added.");
+	}
+	public void displayStudents(){
+		for(Student student : students){
+			student.display();
+		}
+	}
+	public void searchByPRN(int prn) {
+        for (Student student : students) {
+            if (student.getPRN() == prn) {
+                student.display();
+                return;
+            }
+        }
+        System.out.println("Student with PRN " + prn + " not found.");
+    }
+
+    public void searchByName(String name) {
+        for (Student student : students) {
+            if (student.getname().equalsIgnoreCase(name)) {
+                student.display();
+                return;
+            }
+        }
+        System.out.println("Student with Name " + name + " not found.");
+    }
+
+    public void searchByPosition(int index) {
+        if (index < 0 || index >= students.size()) {
+            System.out.println("Invalid position.");
+            return;
+        }
+        students.get(index).display();
+    }
+
+    public void updateStudent(int prn) {
+        for (Student student : students) {
+            if (student.getPRN() == prn) {
+                System.out.println("Enter New Name:");
+                student.setName(System.console().readLine());
+                System.out.println("Enter New Branch:");
+                student.setBranch(System.console().readLine());
+                System.out.println("Enter New Batch:");
+                student.setBatch(System.console().readLine());
+                System.out.println("Enter New DOB:");
+                student.setDOB(System.console().readLine());
+                System.out.println("Enter New CGPA:");
+                student.setCGPA(Float.parseFloat(System.console().readLine()));
+                System.out.println("Student Updated Successfully!");
+                return;
+            }
+        }
+        System.out.println("Student with PRN " + prn + " not found.");
+    }
+
+    public void deleteStudent(int prn) {
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).getPRN() == prn) {
+                students.remove(i);
+                System.out.println("Student Deleted Successfully!");
+                return;
+			}
+        }
+        System.out.println("Student with PRN " + prn + " not found.");
+    }
+}
